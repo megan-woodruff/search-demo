@@ -1,5 +1,7 @@
 import fetch from "node-fetch";
 
+const API_KEY = '563492ad6f917000010000017d2c1cb70dc64ff285a6a96d699261c9'
+
 const serializeParams = (params) => {
   const serializedParams = Object.keys(params).map(key => {
 		let val = params[key]
@@ -11,7 +13,7 @@ const serializeParams = (params) => {
 
 const get = (path) =>
   fetch(path, {
-    headers: { "User-Agent": "chrome", "Authorization": '563492ad6f917000010000015d64bab4baa548e6b251192719dab82d' },
+    headers: { "User-Agent": "chrome", "Authorization": API_KEY },
   }).then((r) => r.json());
 
 export function getSearchResults({ query }) {

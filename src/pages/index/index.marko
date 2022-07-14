@@ -1,5 +1,5 @@
 static function getSearchTerm(query) {
-  if (!query || !query.includes("search")) return "pike place";
+  if (!query || !query.includes("search")) return "seattle skyline";
   return query.split("=")[1].replace(/\+/g, " ");
 }
 $ const searchTerm = getSearchTerm(input.query);
@@ -7,5 +7,4 @@ $ const searchTerm = getSearchTerm(input.query);
 <app-layout title="Image Search Demo">
   <search-header searchTerm=searchTerm/>
   <search-results searchTerm=searchTerm/>
-  <app-footer/>
 </app-layout>
