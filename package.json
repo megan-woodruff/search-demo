@@ -3,7 +3,8 @@
   "description": "The default Marko starter app",
   "version": "1.0.0",
   "dependencies": {
-    "marko": "^5"
+    "marko": "^5",
+    "node-fetch": "^3.2.8"
   },
   "devDependencies": {
     "@marko/build": "^4",
