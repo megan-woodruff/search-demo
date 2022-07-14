@@ -25,7 +25,11 @@ import { getSearchResults } from "../../data/api";
 
       <div.search-results-container>
         <if(results.photos && results.total_results > 0)>
-          <p.search-results-header>${results.total_results} results</p>
+          <p.search-results-header>
+            ${results.total_results}${" "}result${results.total_results > 1
+              ? "s"
+              : ""}
+          </p>
           <div.search-results>
             <for|result, index| of=results.photos>
               <search-result key=result.id ...result/>
@@ -77,6 +81,7 @@ style {
   .search-results {
     flex-wrap: wrap;
     display: flex;
+    width: 100%;
     opacity: 0;
     animation: appear 0.6s forwards ease-out;
   }

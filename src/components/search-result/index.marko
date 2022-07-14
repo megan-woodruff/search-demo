@@ -2,15 +2,19 @@ class {
   onCreate() {
     this.state = { imageLoaded: false };
   }
+  onMount() {
+    const imgElem = document.getElementById(`${this.input.id}-img`);
+    this.setState("imageLoaded", imgElem?.complete);
+  }
   onImageLoaded() {
     this.setState("imageLoaded", true);
   }
 }
-
 <a.search-result href=input.url target="_blank">
   <div.search-result-image-container>
     <img
       on-load("onImageLoaded")
+      id=`${input.id}-img`
       class=["search-result-image", { loaded: state.imageLoaded }]
       src=(input.src.medium)
       alt=input.alt
@@ -26,13 +30,13 @@ style {
     border: none;
     background-color: white;
     cursor: pointer;
-    flex: 1 0 25%;
+    flex: 0 0 25%;
     padding: 1%;
   }
 
   @media only screen and (max-width: 800px) {
     .search-result {
-      flex: 1 0 45%;
+      flex: 0 0 50%;
       padding: 2%;
     }
   }
