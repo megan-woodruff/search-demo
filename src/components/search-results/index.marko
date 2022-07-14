@@ -3,8 +3,8 @@ import { getSearchResults } from "../../data/api";
 <macro name="placeholder-result">
   <div.search-result>
     <div.search-result-image.placeholder/>
-    <div.text-placeholder/>
-    <div.text-placeholder/>
+    <div.photographer.text-placeholder/>
+    <div.dimensions.text-placeholder/>
   </div>
 </macro>
 
@@ -77,6 +77,7 @@ style {
   .text-placeholder {
     height: 1rem;
     width: 8rem;
+    border-radius: 4px;
   }
 
   @keyframes appear {
