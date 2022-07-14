@@ -12,6 +12,7 @@ import { getSearchResults } from "../../data/api";
   <await(getSearchResults({ query: input.searchTerm })) client-reorder>
     <@placeholder>
       <div.search-results-container>
+        <div.search-results-header.text-placeholder/>
         <div.search-results>
           <for|i| from=0 to=8>
             <placeholder-result/>
@@ -57,7 +58,7 @@ style {
   .search-results-header {
     font-size: 1.25rem;
     font-weight: 700;
-    margin: 1% auto;
+    margin: 24px auto;
     text-align: center;
   }
 
@@ -65,7 +66,7 @@ style {
     flex-wrap: wrap;
     display: flex;
     opacity: 0;
-    animation: appear 0.4s forwards ease-out;
+    animation: appear 0.6s forwards ease-out;
   }
 
   .placeholder,
@@ -74,7 +75,6 @@ style {
   }
 
   .text-placeholder {
-    margin-top: 12px;
     height: 1rem;
     width: 8rem;
   }
